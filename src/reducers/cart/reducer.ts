@@ -97,12 +97,12 @@ interface CartInterface {
                     ...action.payload.order,
                 } as Order
       
-                
+                const orders = state.orders
                 action.payload.callback(true)
                 
                 return {
                         ...state,   
-                        orders: [...state.orders, newOrder],                  
+                        orders: [...orders, newOrder],                  
                         cart: [],
                         TotalItens: 0
                     }
